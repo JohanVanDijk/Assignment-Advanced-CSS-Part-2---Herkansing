@@ -1,0 +1,52 @@
+@import 'start';
+* {
+    background-color: #c3cfe2;
+}
+
+.container{
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(400px,1fr));
+    grid-gap: 5px;
+    text-align: center;
+    .pictureButton {
+        margin: 5px;
+        height: auto;
+        position: relative;
+        &:hover .btn{
+            opacity: 1;
+        }
+        .btn{
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 10px;
+        }
+    }
+}
+
+img:hover{
+    transition: .5s ease;
+    opacity: 0.2;
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(400px,1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, minmax(400px,1fr));
+    }
+}
